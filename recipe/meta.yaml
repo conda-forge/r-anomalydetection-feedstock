@@ -1,4 +1,4 @@
-{% set version = '0.1.1' %}
+{% set version = '0.2.4' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/anomalyDetection_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/anomalyDetection/anomalyDetection_{{ version }}.tar.gz
-  sha256: 8e900e25a032952818ec35476ecb013ed07d202e9166a18f13802e8560c38610
+  sha256: 5f0248d2e8fb03f8be54bc2ad76c11fe9f7bc481d1234c53e83dedf4fb4a3529
 
 build:
   number: 0
