@@ -7,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: anomalyDetection_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/anomalyDetection_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/anomalyDetection/anomalyDetection_{{ version }}.tar.gz
@@ -15,17 +14,17 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1003
+  number: 1004
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -70,13 +69,14 @@ test:
 
 about:
   home: https://github.com/koalaverse/anomalyDetection
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Implements procedures developed by Gutierrez et al. (2017, <https://journal.r-project.org/archive/2017/RJ-2017-039/index.html>)  to
     aid in detecting network log anomalies. By combining various multivariate  analytic
     approaches relevant to network anomaly detection, it provides cyber  analysts efficient
     means to detect suspected anomalies requiring further evaluation.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
