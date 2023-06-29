@@ -8,7 +8,7 @@ About r-anomalydetection
 
 Home: https://github.com/koalaverse/anomalyDetection
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: Implements procedures developed by Gutierrez et al. (2017, <https://journal.r-project.org/archive/2017/RJ-2017-039/index.html>)  to aid in detecting network log anomalies. By combining various multivariate  analytic approaches relevant to network anomaly detection, it provides cyber  analysts efficient means to detect suspected anomalies requiring further evaluation.
 About r-anomalydetection
@@ -16,7 +16,7 @@ About r-anomalydetection
 
 Home: https://github.com/koalaverse/anomalyDetection
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: Implements procedures developed by Gutierrez et al. (2017, <https://journal.r-project.org/archive/2017/RJ-2017-039/index.html>)  to aid in detecting network log anomalies. By combining various multivariate  analytic approaches relevant to network anomaly detection, it provides cyber  analysts efficient means to detect suspected anomalies requiring further evaluation.
 
