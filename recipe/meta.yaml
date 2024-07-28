@@ -1,6 +1,5 @@
 {% set version = '0.2.5' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-anomalydetection
@@ -13,8 +12,7 @@ source:
   sha256: e127eefdd9db3c83624dd1779d4f026e66430a164b0074fa58f113f03b585c8c
 
 build:
-  merge_build_host: True  # [win]
-  number: 1004
+  number: 1005
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -47,7 +47,6 @@ requirements:
     - r-tidyr
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - llvm-openmp                # [osx]
     - r-mass
     - r-rcpp >=0.12.11
